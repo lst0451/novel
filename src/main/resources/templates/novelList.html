@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<tbody>
+<!--<span th:text="${authors}">-->
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Author</th>
+        <th>Genre</th>
+        <th>ISBN</th>
+        <th>Language</th>
+        <th>Pages</th>
+        <th>Price</th>
+        <th>Product Dimensions</th>
+        <th>Publish Date</th>
+        <th>Weight</th>
+        <th>Remark</th>
+    </tr>
+    <tr th:each="novel : ${novels}">
+        <td th:text="${novel.getName()}"/>
+        <td th:text="${novel.getAuthor().getAuthorName()}"/>
+        <td th:text="${novel.getGenre()}"/>
+        <td th:text="${novel.getIsbn()}"/>
+        <td th:text="${novel.getLanguage()}"/>
+        <td th:text="${novel.getPages()}"/>
+        <td th:text="${novel.getPrice()}"/>
+        <td th:text="${novel.getProductDimensions()}"/>
+        <td th:text="${novel.getPublishDate()}"/>
+        <td th:text="${novel.getWeight()}"/>
+        <td th:text="${novel.getRemark()}"/>
+    </tr>
+</table>
+</tbody>
+</body>
+</html>

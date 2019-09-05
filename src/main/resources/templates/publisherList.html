@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<tbody>
+<table border="1">
+    <tr><td>Publisher Name</td><td>Introduce</td></tr>
+    <tr th:each="publisher : ${publishers}">
+        <td th:text="${publisher.getName()}"/>
+        <td th:text="${publisher.getRemark()}">
+    </tr>
+</table>
+</tbody>
+</body>
+</html>
