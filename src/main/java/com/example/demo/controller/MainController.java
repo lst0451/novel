@@ -6,6 +6,7 @@ import com.example.demo.service.NovelService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
@@ -52,6 +53,12 @@ public class MainController {
         return "authorList";
     }
 
+    @GetMapping("/novel/{novelId}")
+    public String novelDetails(@PathVariable Long novelId, Model model) {
+        model.addAttribute("novel", service.getNovelById(novelId));
+        return "novelDetails";
+    }
+
     @GetMapping("/novels")
     public String novelList(Model model) {
         model.addAttribute("novels", service.getAllNovels());
@@ -62,5 +69,17 @@ public class MainController {
     public String publisherList(Model model) {
         model.addAttribute("publishers", service.getAllPublishers());
         return "publisherList";
+    }
+
+    @GetMapping("/publisher_novels/{publisherId}")
+    public String publisherNovelList(@PathVariable Long publisherId,Model model) {
+        model.addAttribute("novels", service.getNovelsByPublisher(publisherId));
+        return "novelList";
+    }
+
+    @GetMapping("/author/{authorId}")
+    public String getAuthorDetails(@PathVariable Long authorId, Model model){
+        model.addAttribute("author",service.getAuthorByAuthorId(authorId));
+        return "authorDetails";
     }
 }

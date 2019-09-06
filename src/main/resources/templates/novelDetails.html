@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Novel Details</title>
+    <style>
+        div{
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <div>Name:
+        <div th:text="${novel.getName()}"/>
+    </div>
+<br/>
+    <div>Author:
+        <div th:text="${novel.getAuthor().getAuthorName()}"/>
+    </div>
+    <br/>
+    <div>Genre:
+        <div th:text="${novel.getGenre()}"/>
+    </div>
+    <br/>
+    <div>ISBN:
+        <div th:text="${novel.getIsbn()}"/>
+    </div>
+    <br/>
+    <div>Language:
+        <div th:text="${novel.getLanguage()}"/>
+    </div>
+    <br/>
+    <div>Pages:
+        <div th:text="${novel.getPages()}"/>
+    </div>
+    <br/>
+    <div>Price:
+        <div th:text="${novel.getPrice()}"/>
+    </div>
+    <br/>
+    <div>Product Dimensions:
+        <div th:text="${novel.getProductDimensions()}"/>
+    </div>
+    <br/>
+    <div>Publish Date:
+        <div th:text="${novel.getPublishDate()}"/>
+    </div>
+    <br/>
+    <div>Weight
+        <div th:text="${novel.getWeight()}"/>
+    </div>
+    <br/>
+    <div>Remark:
+        <div th:text="${novel.getRemark()}"/>
+    </div>
+</div>
+</body>
+</html>

@@ -2,6 +2,7 @@ package com.example.demo.repository;
 
 import com.example.demo.entity.Author;
 import com.example.demo.entity.Novel;
+import com.example.demo.entity.Publisher;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -14,4 +15,7 @@ public interface NovelRepository extends JpaRepository<Novel, Long> {
     Optional<Novel> findByName(String name);
 
     List<Novel> findAllByAuthor(Author author);
+
+    List<Novel> findAllByPublisher(Publisher publisher);
+
 }

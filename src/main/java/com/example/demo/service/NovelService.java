@@ -33,28 +33,46 @@ public class NovelService {
         return novelList;
     }
 
-    public Optional<Author> getAuthorByNovelName(String novelName){
+    public Optional<Author> getAuthorByNovelName(String novelName) {
         Optional<Novel> novelInDb = novelRepository.findByName(novelName);
-        Author author=null;
-        if (novelInDb.isPresent()){
+        Author author = null;
+        if (novelInDb.isPresent()) {
             author = authorRepository.findAuthorByNovelListContains(novelInDb.get());
         }
         return Optional.ofNullable(author);
     }
 
-    public Author getAuthorByNovel(Novel novel){
+    public Author getAuthorByNovel(Novel novel) {
         return authorRepository.findAuthorByNovelListContains(novel);
     }
 
-    public List<Author> getAllAuthors(){
+    public List<Author> getAllAuthors() {
         return authorRepository.findAll();
     }
 
-    public List<Novel> getAllNovels(){
+    public List<Novel> getAllNovels() {
         return novelRepository.findAll();
     }
 
     public List<Publisher> getAllPublishers() {
         return publisherRepository.findAll();
+    }
+
+    public Novel getNovelByNovelName(String novelName) {
+        return novelRepository.findByName(novelName).get();
+    }
+
+    public Novel getNovelById(Long novelId) {
+        return novelRepository.findById(novelId).get();
+    }
+
+    public List<Novel> getNovelsByPublisher(Long publisherId) {
+        Publisher publisher = new Publisher();
+        publisher.setId(publisherId);
+        return novelRepository.findAllByPublisher(publisher);
+    }
+
+    public Author getAuthorByAuthorId(Long authorId) {
+        return authorRepository.findById(authorId).get();
     }
 }

@@ -21,7 +21,7 @@ public class RestController {
         this.service = service;
     }
 
-    @GetMapping("/novel/{authorName}")
+    @GetMapping("/author_novels/{authorName}")
     public ResponseEntity<?> getNovelListByAuthor(@PathVariable String authorName) {
         return ResponseEntity.ok(service.getNovelsByAuthor(authorName));
     }

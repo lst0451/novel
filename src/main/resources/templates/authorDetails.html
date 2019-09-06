@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Novel Details</title>
+    <style>
+        div{
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <div>Author Name:
+        <div th:text="${author.getAuthorName()}"/>
+    </div>
+<br/>
+    <div>Introduce:
+        <div th:text="${author.getIntroduce()}"/>
+    </div>
+</div>
+</body>
+</html>

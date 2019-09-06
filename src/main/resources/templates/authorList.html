@@ -6,13 +6,25 @@
 </head>
 <body>
 <tbody>
-<table border="1">
+
+
+<div class="col-md-8 col-md-offset-2">
+    <ul>
+        <li th:each="author : ${authors}">
+            <a th:href="@{'/author_novels/'+${author.getAuthorName()}}" th:text="${author.getAuthorName()}" />
+            <div th:text="${author.getIntroduce()}"></div>
+        </li>
+    </ul>
+</div>
+
+
+<!--<table border="1">
     <tr><td>Author Name</td><td>Introduce</td></tr>
     <tr th:each="author : ${authors}">
         <td th:text="${author.getAuthorName()}"/>
         <td th:text="${author.getIntroduce()}">
     </tr>
-</table>
+</table>-->
 </tbody>
 <p>
 <div><a href="/upload">Import files</a></div>
