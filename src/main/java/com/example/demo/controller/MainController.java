@@ -1,8 +1,12 @@
 package com.example.demo.controller;
 
 import com.example.demo.entity.Author;
+import com.example.demo.entity.Novel;
+import com.example.demo.entity.Publisher;
+import com.example.demo.service.AuthorService;
 import com.example.demo.service.ImportService;
 import com.example.demo.service.NovelService;
+import com.example.demo.service.PublisherService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,17 +16,23 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import springfox.documentation.annotations.ApiIgnore;
 
-import java.util.HashMap;
-import java.util.List;
+import java.util.Optional;
 
 @Controller
 public class MainController {
 
-    private final NovelService service;
+    private final NovelService novelService;
+    private final AuthorService authorService;
+    private final PublisherService publisherService;
     private final ImportService importService;
 
-    public MainController(NovelService service, ImportService importService) {
-        this.service = service;
+    public MainController(NovelService novelService,
+                          AuthorService authorService,
+                          PublisherService publisherService,
+                          ImportService importService) {
+        this.novelService = novelService;
+        this.authorService = authorService;
+        this.publisherService = publisherService;
         this.importService = importService;
     }
 
@@ -33,12 +43,12 @@ public class MainController {
     }
 
     @GetMapping("/upload")
-    public String upload(Model model) {
+    public String getUploadPage(Model model) {
         return "upload";
     }
 
     @PostMapping("/import")
-    public String importNovel(@RequestParam("file") MultipartFile file, Model model) {
+    public String importText(@RequestParam("file") MultipartFile file, Model model) {
         if (file.isEmpty()) {
             model.addAttribute("message", "The file is empty!");
             return "/importStatus";
@@ -47,39 +57,63 @@ public class MainController {
         return "importStatus";
     }
 
-    @GetMapping("/authors")
-    public String authorList(Model model) {
-        model.addAttribute("authors", service.getAllAuthors());
-        return "authorList";
+    @GetMapping("/novels")
+    public String getAllNovels(Model model) {
+        model.addAttribute("novels", novelService.getAllNovels());
+        return "novelList";
     }
 
     @GetMapping("/novel/{novelId}")
-    public String novelDetails(@PathVariable Long novelId, Model model) {
-        model.addAttribute("novel", service.getNovelById(novelId));
+    public String getNovelDetailsById(@PathVariable Long novelId, Model model) {
+        Optional<Novel> novelById = novelService.getNovelById(novelId);
+        if (novelById.isPresent()) {
+            model.addAttribute("novel", novelById.get());
+        } else {
+            return "index";
+        }
         return "novelDetails";
     }
 
-    @GetMapping("/novels")
-    public String novelList(Model model) {
-        model.addAttribute("novels", service.getAllNovels());
-        return "novelList";
-    }
-
-    @GetMapping("/publishers")
-    public String publisherList(Model model) {
-        model.addAttribute("publishers", service.getAllPublishers());
-        return "publisherList";
-    }
-
-    @GetMapping("/publisher_novels/{publisherId}")
-    public String publisherNovelList(@PathVariable Long publisherId,Model model) {
-        model.addAttribute("novels", service.getNovelsByPublisher(publisherId));
-        return "novelList";
+    @GetMapping("/authors")
+    public String getAllAuthors(Model model) {
+        model.addAttribute("authors", novelService.getAllAuthors());
+        return "authorList";
     }
 
     @GetMapping("/author/{authorId}")
-    public String getAuthorDetails(@PathVariable Long authorId, Model model){
-        model.addAttribute("author",service.getAuthorByAuthorId(authorId));
+    public String getAuthorDetailsById(@PathVariable Long authorId, Model model) {
+        Optional<Author> authorByAuthorId = authorService.getAuthorByAuthorId(authorId);
+        if (authorByAuthorId.isPresent()) {
+            model.addAttribute("author", authorByAuthorId.get());
+        } else {
+            return "index";
+        }
         return "authorDetails";
+    }
+
+    @GetMapping("/publishers")
+    public String getAllPublishers(Model model) {
+        model.addAttribute("publishers", novelService.getAllPublishers());
+        return "publisherList";
+    }
+
+    @GetMapping("/publisher/{publisherId}")
+    public String getPublisherDetails(@PathVariable Long publisherId, Model model) {
+        Optional<Publisher> publisherByPublisherId =
+                publisherService.getPublisherByPublisherId(publisherId);
+        if (publisherByPublisherId.isPresent()) {
+            model.addAttribute("publisher", publisherByPublisherId.get()
+            );
+        } else {
+            return "index";
+        }
+        return "publisherDetails";
+    }
+
+    @GetMapping("/publisher_novels/{publisherId}")
+    public String getPublisherNovelList(@PathVariable Long publisherId, Model model) {
+        model.addAttribute("novels",
+                novelService.getNovelsByPublisher(publisherId));
+        return "novelList";
     }
 }

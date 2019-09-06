@@ -25,7 +25,7 @@ public class Author {
     private String introduce;
 
     @OneToMany(mappedBy = "author", cascade = {CascadeType.ALL})
-    @JsonManagedReference
+    @JsonManagedReference(value = "authorReference")
     private List<Novel> novelList;
 
 }

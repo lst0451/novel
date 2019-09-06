@@ -1,11 +1,13 @@
 package com.example.demo.service;
 
+import com.example.demo.common.CommonResponse;
 import com.example.demo.entity.Author;
 import com.example.demo.entity.Novel;
 import com.example.demo.entity.Publisher;
 import com.example.demo.repository.AuthorRepository;
 import com.example.demo.repository.NovelRepository;
 import com.example.demo.repository.PublisherRepository;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -13,6 +15,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
+@Log4j2
 public class NovelService {
     private final NovelRepository novelRepository;
     private final PublisherRepository publisherRepository;
@@ -33,19 +36,6 @@ public class NovelService {
         return novelList;
     }
 
-    public Optional<Author> getAuthorByNovelName(String novelName) {
-        Optional<Novel> novelInDb = novelRepository.findByName(novelName);
-        Author author = null;
-        if (novelInDb.isPresent()) {
-            author = authorRepository.findAuthorByNovelListContains(novelInDb.get());
-        }
-        return Optional.ofNullable(author);
-    }
-
-    public Author getAuthorByNovel(Novel novel) {
-        return authorRepository.findAuthorByNovelListContains(novel);
-    }
-
     public List<Author> getAllAuthors() {
         return authorRepository.findAll();
     }
@@ -62,8 +52,8 @@ public class NovelService {
         return novelRepository.findByName(novelName).get();
     }
 
-    public Novel getNovelById(Long novelId) {
-        return novelRepository.findById(novelId).get();
+    public Optional<Novel> getNovelById(Long novelId) {
+        return novelRepository.findById(novelId);
     }
 
     public List<Novel> getNovelsByPublisher(Long publisherId) {
@@ -72,7 +62,53 @@ public class NovelService {
         return novelRepository.findAllByPublisher(publisher);
     }
 
-    public Author getAuthorByAuthorId(Long authorId) {
-        return authorRepository.findById(authorId).get();
+    public CommonResponse addNovel(Novel novel) {
+        Author author = novel.getAuthor();
+        Publisher publisher = novel.getPublisher();
+        CommonResponse.CommonResponseBuilder<Object> builder = CommonResponse.builder();
+        if (author == null) {
+            return builder
+                    .code("400")
+                    .message("Author is null")
+                    .body(null).build();
+        }
+        if (publisher == null) {
+            return builder
+                    .code("400")
+                    .message("publisher is null")
+                    .body(null).build();
+        }
+        if (author.getId() != null) {
+            Optional<Author> byId = authorRepository.findById(author.getId());
+            if (byId.isPresent()) {
+                author = byId.get();
+                novel.setAuthor(author);
+            } else {
+                builder.code("400")
+                        .message("Author doesn't exist,id=" + author.getId())
+                        .build();
+            }
+        }
+        if (publisher.getId() != null) {
+            Optional<Publisher> byId = publisherRepository.findById(publisher.getId());
+            if (byId.isPresent()) {
+                publisher = byId.get();
+                novel.setPublisher(publisher);
+            } else {
+                builder.code("400")
+                        .message("Author doesn't exist,id=" + publisher.getId())
+                        .build();
+            }
+        }
+        Novel save = novelRepository.save(novel);
+        return CommonResponse.ok(save);
+    }
+
+    public Novel saveNovel(Novel novel) {
+        return novelRepository.save(novel);
+    }
+
+    public void deleteNovel(Long novelId) {
+        novelRepository.deleteById(novelId);
     }
 }

@@ -132,9 +132,7 @@ public class ImportService {
                     author.setIntroduce(v.trim());
                     break;
             }
-//            author = authorRepository.save(author);
             novel.setAuthor(author);
-//            publisher = publisherRepository.save(publisher);
             novel.setPublisher(publisher);
             novelRepository.save(novel);
         }

@@ -11,17 +11,17 @@
 </head>
 <body>
 <div>
-    <div>Author Name:
-        <div th:text="${author.getAuthorName()}"/>
+    <div>Publisher Name:
+        <div th:text="${publisher.getName()}"/>
     </div>
     <br/>
-    <div>Introduce:
-        <div th:text="${author.getIntroduce()}"/>
+    <div>Country:
+        <div th:text="${publisher.getCountry()}"/>
     </div>
     <br/>
     <div>Novel List:
         <ul>
-            <li th:each="novel : ${author.getNovelList()}">
+            <li th:each="novel : ${publisher.getNovelList()}">
                 <a th:href="@{'/novel/'+${novel.getId()}}" th:text="${novel.getName()}" /><br/>
             </li>
         </ul>

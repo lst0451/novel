@@ -22,14 +22,14 @@ public class Novel {
     @Column(nullable = false)
     private String name;
 
-    @ManyToOne(cascade = {CascadeType.ALL}, fetch = FetchType.EAGER, optional = false)
+    @ManyToOne(cascade = {CascadeType.DETACH, CascadeType.PERSIST, CascadeType.MERGE}, fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "author_id")
-    @JsonBackReference
+    @JsonBackReference(value = "authorReference")
     private Author author;
 
-    @ManyToOne(cascade = {CascadeType.ALL}, fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(cascade = {CascadeType.DETACH, CascadeType.PERSIST, CascadeType.MERGE}, fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "publisher_id")
-    @JsonBackReference
+    @JsonBackReference(value = "publisherReference")
     private Publisher publisher;
 
     private LocalDate publishDate;
