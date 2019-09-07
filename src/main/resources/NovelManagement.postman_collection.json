@@ -1,0 +1,381 @@
+{
+	"info": {
+		"_postman_id": "d1ddd385-74ee-460d-9bd9-1974bf636c34",
+		"name": "0.0Novel",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/author",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"authorName\": \"XXXXXXXX\",\r\n        \"introduce\": \"XXXXXXXXX.\",\r\n        \"novelList\": [\r\n            {\r\n                \"name\": \"NovelSSSSSSSSSS\",\r\n                \"publishDate\": \"1954-05-05\",\r\n                \"price\": 128.00,\r\n                \"pages\": 567,\r\n                \"genre\": \"ssss\",\r\n                \"isbn\": \"7863654\",\r\n                \"language\": \"English\",\r\n                \"weight\": 113,\r\n                \"remark\": \"xxxxxxxxxxxxxxxxxxxxxxxxxxxxx\",\r\n                \"productDimensions\": \"13.3 x 0.8 x 20.3 cm\",\r\n                \"publisher\":{\r\n                \t\"name\":\"xxxPUB\",\r\n                \t\"type\":\"mohuan\"\r\n                }\r\n            }\r\n        ]\r\n    }"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/author",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"author"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/authors",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/authors",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"authors"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/author/1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/author/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"author",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/author",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1,\r\n    \"authorName\": \"Zhaliangyong\",\r\n    \"introduce\": \"Chinese great author.\",\r\n    \"novelList\": null\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/author",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"author"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/author/1",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/author/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"author",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/novel",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n                \n                \"name\": \"kkkkkkkkkk\",\n                \"publishDate\": \"1954-05-05\",\n                \"price\": 128.00,\n                \"pages\": 999,\n                \"genre\": \"kkk\",\n                \"isbn\": \"kkkkkkkkkk\",\n                \"language\": \"English\",\n                \"weight\": 113,\n                \"remark\": \"Ekkkkkkkkkkkkkkkkkkkkkkkkk.\",\n                \"productDimensions\": \"13.3 x 0.8 x 20.3 cm\",\n                \"author\":{\n                \t\"id\":1\n                },\n                \"publisher\":{\n                \t\"id\":1\n                }\n                \n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/novel",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"novel"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/novels",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/novels",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"novels"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/novel/1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/novel/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"novel",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/novel",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1,\r\n    \"name\": \"Yong Man and the Sea\",\r\n    \"publishDate\": \"1954-05-05\",\r\n    \"price\": 128.00,\r\n    \"pages\": null,\r\n    \"genre\": null,\r\n    \"isbn\": \"0684801221\",\r\n    \"language\": \"English\",\r\n    \"weight\": 113,\r\n    \"remark\": \"YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY\",\r\n    \"productDimensions\": \"13.3 x 0.8 x 20.3 cm\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/novel",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"novel"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/novel/1",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/novel/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"novel",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/publishers Copy",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"country\": \"CA\",\r\n  \"name\": \"GGGGG\",\r\n  \"novelList\": [\r\n    {\r\n      \"author\": {\r\n        \"authorName\": \"GGGGG\",\r\n        \"introduce\": \"GGGGGGGGGGGGGGGGGG\"\r\n      },\r\n      \"genre\": \"BOOKGGG\",\r\n      \"isbn\": \"987654\",\r\n      \"language\": \"French\",\r\n      \"name\": \"A GGG BOOK\",\r\n      \"pages\": 399,\r\n      \"price\": 566,\r\n      \"productDimensions\": \"7*7*7\",\r\n      \"publishDate\": \"2019-08-29\",\r\n      \"remark\": \"GGGGGGGGGG\",\r\n      \"weight\": 666\r\n    }\r\n  ],\r\n  \"remark\": \"GGGGGGGGGG\",\r\n  \"type\": \"GGG\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/publisher",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"publisher"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/publishers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/publishers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"publishers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/publisher/1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/publisher/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"publisher",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/publisher",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 4,\r\n    \"name\": \"MMM\",\r\n    \"type\": \"MM\",\r\n    \"country\": \"CA\",\r\n    \"remark\": \"MMMMMM\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/publisher",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"publisher"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/publisher/1",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/publisher/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"publisher",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

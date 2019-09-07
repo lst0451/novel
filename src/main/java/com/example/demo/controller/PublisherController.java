@@ -36,8 +36,8 @@ public class PublisherController {
 
     @PostMapping("/publisher")
     public ResponseEntity<Publisher> addPublisher(@RequestBody Publisher publisher) {
-        Publisher savedAuthor = publisherService.savePublisher(publisher);
-        return ResponseEntity.ok(publisher);
+        Publisher savedPublisher = publisherService.savePublisher(publisher);
+        return ResponseEntity.ok(savedPublisher);
     }
 
     @PutMapping("/publisher")
@@ -46,7 +46,7 @@ public class PublisherController {
         return ResponseEntity.ok(savedPublisher);
     }
 
-    @DeleteMapping("/author/{publisherId}")
+    @DeleteMapping("/publisher/{publisherId}")
     public ResponseEntity deletePublisher(@PathVariable Long publisherId) {
         boolean deleted = publisherService.deletePublisherById(publisherId);
         if (deleted) {

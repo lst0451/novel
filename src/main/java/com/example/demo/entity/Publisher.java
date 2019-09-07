@@ -19,7 +19,8 @@ public class Publisher {
     private Long id;
 
     @OneToMany(mappedBy = "publisher",
-            cascade = {CascadeType.DETACH,
+            cascade = {
+                    CascadeType.DETACH,
                     CascadeType.MERGE,
                     CascadeType.PERSIST})
     @JsonManagedReference(value = "publisherReference")
