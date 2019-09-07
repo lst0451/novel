@@ -43,6 +43,7 @@ public class MainController {
     }
 
     @GetMapping("/upload")
+    @ApiIgnore
     public String getUploadPage(Model model) {
         return "upload";
     }

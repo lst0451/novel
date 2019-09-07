@@ -18,7 +18,10 @@ public class Publisher {
     @GenericGenerator(name = "native", strategy = "native")
     private Long id;
 
-    @OneToMany(mappedBy = "publisher", cascade = {CascadeType.DETACH})
+    @OneToMany(mappedBy = "publisher",
+            cascade = {CascadeType.DETACH,
+                    CascadeType.MERGE,
+                    CascadeType.PERSIST})
     @JsonManagedReference(value = "publisherReference")
     private List<Novel> novelList;
 

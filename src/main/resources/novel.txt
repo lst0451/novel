@@ -1,0 +1,82 @@
+Name: Old Man and the Sea
+Author: Ernest Hemingway
+Introduce:Very good.
+Price: 128
+Publisher: Scribner
+Publish Date: 1954-05-05
+Language: English
+ISBN: 0684801221
+Product Dimensions: 13.3 x 0.8 x 20.3 cm
+Weight: 113
+Remark:Ernest Hemingway did more to influence the style of English prose than any other writer of his time. Publication of The Sun Also Rises and A Farewell to Arms immediately established him as one of the greatest literary lights of the 20th century. His classic novella The Old Man and the Sea won the Pulitzer Prize in 1953. Hemingway was awarded the Nobel Prize for Literature in 1954. He died in 1961.
+
+
+Name: The Lord of the Rings
+Author: J.R.R.Tolkin
+Introduce: Great English Author
+Genre: Fantasy,Adventure
+Pages: 1216
+Language: English
+Price: 26.22
+ISBN: 9780261102385
+Product Dimensions: 11.1 x 10.7 x 17.8 cm
+Weight: 962
+Publish Date: 1954-07-29
+Publisher: 	Allen & Unwin
+Remark: For those who have not read Tolkien's epic fantasy, or for those looking to replace a worn and battered copy, this three-volume The Lord of the Rings box set is a great place to start. Comprising the three novels that make up the Lord of the Rings sequence--The Fellowship of the Ring, The Two Towers and The Return of the King--the whole set is presented in matching matt black packaging with embossed runes and coloured rings. Of course, beneath the fancy covers lies a great epic story of good versus evil, perhaps one of the greatest stories ever told. Attractively presented--and at a great price--there really is no excuse not to have this in your collection. So go on, give it a try; once you've entered Tolkien's fantastic imagination, you'll find it hard to leave. --Jonathan Weir
+
+Name:The Hobbit
+Author: J.R.R.Tolkin
+Introduce: Great English Author
+Genre:High fantasy,Juvenile fantasy
+Pages: 400
+Publisher: HarperCollins
+Publish Date: 2011-10-27
+Language: English
+ISBN: 0261102214
+Product Dimensions: 11.1 x 2.5 x 17.8 cm
+Weight: 222
+Remark: One of the best loved characters in English fiction,a marvellous fantasy adventure --Daily Mail
+
+Name: The Lord of the Rings
+Author: J.R.R.Tolkin
+Introduce: Great English Author
+Genre: Fantasy,Adventure
+Pages: 1216
+Language: English
+Price: 26.22
+ISBN: 9780261102385
+Product Dimensions: 11.1 x 10.7 x 17.8 cm
+Weight: 962
+Publish Date: 1954-07-29
+Publisher: 	Allen & Unwin
+Remark: For those who have not read Tolkien's epic fantasy, or for those looking to replace a worn and battered copy, this three-volume The Lord of the Rings box set is a great place to start. Comprising the three novels that make up the Lord of the Rings sequence--The Fellowship of the Ring, The Two Towers and The Return of the King--the whole set is presented in matching matt black packaging with embossed runes and coloured rings. Of course, beneath the fancy covers lies a great epic story of good versus evil, perhaps one of the greatest stories ever told. Attractively presented--and at a great price--there really is no excuse not to have this in your collection. So go on, give it a try; once you've entered Tolkien's fantastic imagination, you'll find it hard to leave. --Jonathan Weir
+
+Name: Test AAA
+Author: Shitao Li
+Introduce: Java Developer
+Genre: Programing
+Pages: 400
+Publisher: HarperCollins
+Publish Date: 2016-10-27
+Language: English
+ISBN: 1234567890
+Product Dimensions: 11.1 x 2.5 x 17.8 cm
+Weight: 222
+Remark: Test AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA.
+
+
+Name: Test BBBBBBBBBBBBBBBBBBBB
+Author: Shitao Li
+Introduce: Java Developer
+Genre: Programing
+Pages: 1216
+Language: English
+Price: 26.22
+ISBN: 0987654321
+Product Dimensions: 11.1 x 10.7 x 17.8 cm
+Weight: 962
+Publish Date: 2018-07-29
+Publisher: 	Allen & Unwin
+Remark: Test BBBBBBBBBBBBBBBBBBBBBBBBBB
+
