@@ -56,8 +56,7 @@ public class PublisherController {
                 .body(CommonResponse.builder()
                         .code("400")
                         .message("delete failed.")
-                        .cause("Publisher doesn't exist.").build());
+                        .cause("delete failed.").build());
     }
-
 
 }

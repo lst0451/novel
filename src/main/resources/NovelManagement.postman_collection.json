@@ -6,7 +6,7 @@
 	},
 	"item": [
 		{
-			"name": "http://localhost:8080/author",
+			"name": "Create a complete set of data using AuthorController",
 			"request": {
 				"method": "POST",
 				"header": [
@@ -19,7 +19,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "    {\r\n        \"authorName\": \"XXXXXXXX\",\r\n        \"introduce\": \"XXXXXXXXX.\",\r\n        \"novelList\": [\r\n            {\r\n                \"name\": \"NovelSSSSSSSSSS\",\r\n                \"publishDate\": \"1954-05-05\",\r\n                \"price\": 128.00,\r\n                \"pages\": 567,\r\n                \"genre\": \"ssss\",\r\n                \"isbn\": \"7863654\",\r\n                \"language\": \"English\",\r\n                \"weight\": 113,\r\n                \"remark\": \"xxxxxxxxxxxxxxxxxxxxxxxxxxxxx\",\r\n                \"productDimensions\": \"13.3 x 0.8 x 20.3 cm\",\r\n                \"publisher\":{\r\n                \t\"name\":\"xxxPUB\",\r\n                \t\"type\":\"mohuan\"\r\n                }\r\n            }\r\n        ]\r\n    }"
+					"raw": "{\n    \"authorName\": \"Peter\",\n    \"introduce\": \"Big author Peter\",\n    \"novelList\": [\n        {\n            \"name\": \"Peter Novel\",\n            \"publishDate\": \"1954-05-05\",\n            \"price\": 128,\n            \"pages\": 567,\n            \"genre\": \"ppp\",\n            \"isbn\": \"7863654\",\n            \"language\": \"English\",\n            \"weight\": 113,\n            \"remark\": \"Best novel of Peter.\",\n            \"productDimensions\": \"13.3 x 0.8 x 20.3 cm\",\n            \"publisher\": {\n                \"name\": \"Peter PUB\",\n                \"type\": \"ppp\"\n            }\n        }\n    ]\n}"
 				},
 				"url": {
 					"raw": "http://localhost:8080/api/author",
@@ -37,7 +37,7 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost:8080/api/authors",
+			"name": "Get all Authors information",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -57,7 +57,7 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost:8080/api/author/1",
+			"name": "Get spicified Author information",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -78,7 +78,7 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost:8080/api/author",
+			"name": "Modify author",
 			"request": {
 				"method": "PUT",
 				"header": [
@@ -109,7 +109,7 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost:8080/api/author/1",
+			"name": "Delete spicified author",
 			"request": {
 				"method": "DELETE",
 				"header": [],
@@ -130,7 +130,7 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost:8080/api/novel",
+			"name": "Create novel for existing author and publisher.",
 			"request": {
 				"method": "POST",
 				"header": [
@@ -143,7 +143,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n                \n                \"name\": \"kkkkkkkkkk\",\n                \"publishDate\": \"1954-05-05\",\n                \"price\": 128.00,\n                \"pages\": 999,\n                \"genre\": \"kkk\",\n                \"isbn\": \"kkkkkkkkkk\",\n                \"language\": \"English\",\n                \"weight\": 113,\n                \"remark\": \"Ekkkkkkkkkkkkkkkkkkkkkkkkk.\",\n                \"productDimensions\": \"13.3 x 0.8 x 20.3 cm\",\n                \"author\":{\n                \t\"id\":1\n                },\n                \"publisher\":{\n                \t\"id\":1\n                }\n                \n}"
+					"raw": "{\n    \"name\": \"Alan's second novel\",\n    \"publishDate\": \"1954-05-05\",\n    \"price\": 128,\n    \"pages\": 999,\n    \"genre\": \"aaa\",\n    \"isbn\": \"666666666\",\n    \"language\": \"English\",\n    \"weight\": 113,\n    \"remark\": \"Alan's second novel.\",\n    \"productDimensions\": \"13.3 x 0.8 x 20.3 cm\",\n    \"author\": {\n        \"id\": 2\n    },\n    \"publisher\": {\n        \"id\": 2\n    }\n}"
 				},
 				"url": {
 					"raw": "http://localhost:8080/api/novel",
@@ -161,7 +161,7 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost:8080/api/novels",
+			"name": "Get all Novels information",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -181,7 +181,7 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost:8080/api/novel/1",
+			"name": "Get spcified Novel information",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -202,7 +202,7 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost:8080/api/novel",
+			"name": "Modify Novel",
 			"request": {
 				"method": "PUT",
 				"header": [
@@ -233,7 +233,7 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost:8080/api/novel/1",
+			"name": "Delete spicified novel",
 			"request": {
 				"method": "DELETE",
 				"header": [],
@@ -254,7 +254,7 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost:8080/api/publishers Copy",
+			"name": "Create a complete set of information using PublisherController",
 			"request": {
 				"method": "POST",
 				"header": [
@@ -267,7 +267,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"country\": \"CA\",\r\n  \"name\": \"GGGGG\",\r\n  \"novelList\": [\r\n    {\r\n      \"author\": {\r\n        \"authorName\": \"GGGGG\",\r\n        \"introduce\": \"GGGGGGGGGGGGGGGGGG\"\r\n      },\r\n      \"genre\": \"BOOKGGG\",\r\n      \"isbn\": \"987654\",\r\n      \"language\": \"French\",\r\n      \"name\": \"A GGG BOOK\",\r\n      \"pages\": 399,\r\n      \"price\": 566,\r\n      \"productDimensions\": \"7*7*7\",\r\n      \"publishDate\": \"2019-08-29\",\r\n      \"remark\": \"GGGGGGGGGG\",\r\n      \"weight\": 666\r\n    }\r\n  ],\r\n  \"remark\": \"GGGGGGGGGG\",\r\n  \"type\": \"GGG\"\r\n}"
+					"raw": "{\r\n  \"country\": \"CA\",\r\n  \"name\": \"Mike PUB\",\r\n  \"novelList\": [\r\n    {\r\n      \"author\": {\r\n        \"authorName\": \"Mike\",\r\n        \"introduce\": \"Better Mike\"\r\n      },\r\n      \"genre\": \"MMM\",\r\n      \"isbn\": \"987654555\",\r\n      \"language\": \"French\",\r\n      \"name\": \"Mike's novel\",\r\n      \"pages\": 399,\r\n      \"price\": 566,\r\n      \"productDimensions\": \"7*7*7\",\r\n      \"publishDate\": \"2019-08-29\",\r\n      \"remark\": \"Mike's best novel\",\r\n      \"weight\": 666\r\n    }\r\n  ],\r\n  \"remark\": \"Publisher for Mike\",\r\n  \"type\": \"MMM\"\r\n}"
 				},
 				"url": {
 					"raw": "http://localhost:8080/api/publisher",
@@ -285,7 +285,7 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost:8080/api/publishers",
+			"name": "Get all publishers information",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -305,7 +305,7 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost:8080/api/publisher/1",
+			"name": "Get spicified publisher information",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -326,7 +326,7 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost:8080/api/publisher",
+			"name": "Modify Publisher",
 			"request": {
 				"method": "PUT",
 				"header": [
@@ -339,7 +339,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"id\": 4,\r\n    \"name\": \"MMM\",\r\n    \"type\": \"MM\",\r\n    \"country\": \"CA\",\r\n    \"remark\": \"MMMMMM\"\r\n}"
+					"raw": "{\r\n    \"id\": 2,\r\n    \"name\": \"modifyname\",\r\n    \"type\": \"modifytype\",\r\n    \"country\": \"USA\",\r\n    \"remark\": \"modifyremark\"\r\n}"
 				},
 				"url": {
 					"raw": "http://localhost:8080/api/publisher",
@@ -357,7 +357,7 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost:8080/api/publisher/1",
+			"name": "Delete spicified publisher",
 			"request": {
 				"method": "DELETE",
 				"header": [],
