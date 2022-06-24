@@ -16,7 +16,7 @@
 
     <properties>
         <java.version>1.8</java.version>
-        <jboss-resteasy.version>3.6.3.Final</jboss-resteasy.version>
+        <jboss-resteasy.version>3.14.0.Final</jboss-resteasy.version>
     </properties>
 
     <dependencies>
